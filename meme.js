@@ -10,6 +10,17 @@ const img = document.querySelector('img');
 const canvas = document.querySelector('canvas');
 console.log(svg);
 
+//get meme photos
+let requestURL = 'https://api.imgflip.com/get_memes';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+    const MemePhotoData = request.response;
+    console.log(MemePhotoData);
+  }
+
 //controls for the top meme text
 TopInput.addEventListener("change",(e)=>{
     MemeTop.textContent=e.target.value;
@@ -34,6 +45,13 @@ document.getElementById('BottomSize').addEventListener("change",(e)=>{
     MemeBottom.style.fontSize = e.target.value+"px";
 })
 
+const xml = (new XMLSerializer()).serializeToString(svg);
+const svg64 = btoa(xml);
+const b64Start = 'data:image/svg+xml;base64,';  
+const image64 = b64Start + svg64;
+console.log(image64);
+  img.src = image64; 
+
 
 ImageButton.addEventListener("click",()=>{
     console.log("image button")
@@ -41,6 +59,7 @@ ImageButton.addEventListener("click",()=>{
 const svg64 = btoa(xml);
 const b64Start = 'data:image/svg+xml;base64,';  
 const image64 = b64Start + svg64;
+console.log(image64);
   img.src = image64;  
 })
 

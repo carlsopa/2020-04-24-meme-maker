@@ -5,6 +5,7 @@
   </head>
   <link rel="stylesheet" type="text/css" href="meme.css">
   <body>
+      <div id=MemeMaker>
     <div id="SvgCanvas">
       SVG
       <div id="SvgDiv" contenteditable="true">
@@ -12,7 +13,7 @@
           <image
             x="0"
             y="0"
-            href="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"/>
+            href="https://i.imgflip.com/1ur9b0.jpg"/>
           Top Meme Text
           <text id="MemeTop" y="10px" font-size="16">Enter Text Here</text>
           Bottom Meme Text
@@ -23,7 +24,7 @@
     <div id="SvgControls">
       <form>
         <input type="text" id="TopText" />
-        choose a color:
+        <span>choose a color:</span>
         <div id="TopColorPicker">
           <div id='black' class='TopColor'></div>
           <div id='white' class='TopColor'></div>
@@ -35,7 +36,7 @@
           
           <input type="range" id="TopSize" name="TopSize" min="8" max="32">
         <input type="text" id="BottomText" />
-        choose a color
+        <span>choose a color:</span>
         <div id="BottomColorPicker">
         <div id='black' class='BottomColor'></div>
           <div id='white' class='BottomColor'></div>
@@ -48,15 +49,20 @@
       </form>
       <div id="ImageConvert">Convert to Canvas</div>
     </div>
+    <div id="MemeChooser">
+
+    </div>
     
     <div id="Output">
       IMAGE
       <img />
       CANVAS
       <canvas></canvas>
-      <a id="DownloadLink" download="Canvas.png" href="#"
-        >Download your artwork</a
-      >
+      
+      
+    </div>
+    <a id="DownloadLink" download="Canvas.png" href="#"
+        >Download your artwork</a>
     </div>
   </body>
   <script src="meme.js" type="text/javascript"></script>
