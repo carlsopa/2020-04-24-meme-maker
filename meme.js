@@ -8,6 +8,7 @@ const ImageButton = document.getElementById("ImageConvert");
 const svg = document.querySelector('svg');
 const img = document.querySelector('img');
 const canvas = document.querySelector('canvas');
+console.log(svg);
 
 
 TopInput.addEventListener("change",(e)=>{
@@ -17,13 +18,12 @@ BottomInput.addEventListener("change",(e)=>{
     MemeBottom.textContent=e.target.value;
 })
 
-//conversions to make it downloadable
-const xml = new XMLSerializer().serializeToString(svg);
-const svg64 = btoa(xml);
-const b64Start = 'data:image/svg+xml;base64,';
 
-const image64 = b64Start + svg64;
 ImageButton.addEventListener("click",()=>{
+  const xml = (new XMLSerializer()).serializeToString(svg);
+const svg64 = btoa(xml);
+const b64Start = 'data:image/svg+xml;base64,';  
+const image64 = b64Start + svg64;
   img.src = image64;  
 })
 
