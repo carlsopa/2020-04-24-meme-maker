@@ -10,6 +10,12 @@ const img = document.querySelector('img');
 const canvas = document.querySelector('canvas');
 console.log(svg);
 
+document.getElementById('TopColorPicker').addEventListener("click",(e)=>{
+    MemeTop.style.fill=e.target.id;
+})
+document.getElementById('BottomColorPicker').addEventListener("click",(e)=>{
+    MemeBottom.style.fill=e.target.id;
+});
 
 TopInput.addEventListener("change",(e)=>{
     MemeTop.textContent=e.target.value;
