@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carlson's meme-maker</title>
+    </head>
+    <body>
+        SVG
+        <div contenteditable="true">
+            <svg height="100">
+                <rect width="40" height="50" style="fill:blue;" />
+    <rect width="20" height="80" style="fill:red;" />
+    <circle r="20" cx="50" cy="50" style="fill:yellow;" />
+    <text id="MemeTop" y="2em">Enter Text Here</text>
+                <text id="MemeBottom" y="6em">Enter Text Here</text>
+            </svg>
+            
+        </div>
+        <form>
+            <input type="text" id="TopText"/>
+            <input type="text" id="BottomText"/>
+        </form>
+        <div id="ImageConvert">Convert to image</div>
+        IMAGE
+        <img/>
+        CANVAS
+        <canvas></canvas>
+        <a id='DownloadLink' download='Canvas.png' href='#'>Download your artwork</a>
+    </body>
+    <script src='meme.js' type="text/javascript"></script>
+</html>
