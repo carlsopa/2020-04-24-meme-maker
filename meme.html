@@ -7,18 +7,16 @@
   <body>
     <div id="SvgCanvas">
       SVG
-      <div contenteditable="true">
-        <svg>
+      <div id="SvgDiv" contenteditable="true">
+        <svg >
           <image
             x="0"
             y="0"
-            href="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
-width="750" height="500"
-          />
+            href="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"/>
           Top Meme Text
-          <text id="MemeTop" y="6em" font-size="16">Enter Text Here</text>
+          <text id="MemeTop" y="10px" font-size="16">Enter Text Here</text>
           Bottom Meme Text
-          <text id="MemeBottom" y="8em" font-size="32">Enter Text Here</text>
+          <text id="MemeBottom" y="50px" font-size="32">Enter Text Here</text>
         </svg>
       </div>
     </div>
@@ -48,6 +46,7 @@ width="750" height="500"
         </div>
         <input type="range" id="BottomSize" name="BottomSize" min="8" max="32">
       </form>
+      <div id="ImageConvert">Convert to Canvas</div>
     </div>
     
     <div id="Output">

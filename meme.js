@@ -10,22 +10,33 @@ const img = document.querySelector('img');
 const canvas = document.querySelector('canvas');
 console.log(svg);
 
+//controls for the top meme text
+TopInput.addEventListener("change",(e)=>{
+    MemeTop.textContent=e.target.value;
+});
 document.getElementById('TopColorPicker').addEventListener("click",(e)=>{
     MemeTop.style.fill=e.target.id;
+})
+document.getElementById('TopSize').addEventListener("change",(e)=>{
+    console.log(e.target.value+"px")
+    MemeTop.style.fontSize = e.target.value+"px";
+})
+
+//controls for the bottom meme text
+BottomInput.addEventListener("change",(e)=>{
+    MemeBottom.textContent=e.target.value;
 })
 document.getElementById('BottomColorPicker').addEventListener("click",(e)=>{
     MemeBottom.style.fill=e.target.id;
 });
-
-TopInput.addEventListener("change",(e)=>{
-    MemeTop.textContent=e.target.value;
-});
-BottomInput.addEventListener("change",(e)=>{
-    MemeBottom.textContent=e.target.value;
+document.getElementById('BottomSize').addEventListener("change",(e)=>{
+    console.log(e.target.value+"px")
+    MemeBottom.style.fontSize = e.target.value+"px";
 })
 
 
 ImageButton.addEventListener("click",()=>{
+    console.log("image button")
   const xml = (new XMLSerializer()).serializeToString(svg);
 const svg64 = btoa(xml);
 const b64Start = 'data:image/svg+xml;base64,';  
