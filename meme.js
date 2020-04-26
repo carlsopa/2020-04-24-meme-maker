@@ -20,6 +20,11 @@ request.onload = function() {
     const MemePhotoData = request.response;
     console.log(MemePhotoData);
   }
+  MemeBottom.addEventListener("click",()=>{
+      console.log("click")
+  })
+  const 
+  
 
 //controls for the top meme text
 TopInput.addEventListener("change",(e)=>{

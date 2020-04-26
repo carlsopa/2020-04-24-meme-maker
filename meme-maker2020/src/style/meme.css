@@ -60,6 +60,7 @@ span{
 #MemeChooser{
     grid-column: 2/3;
     grid-row:5/9;
+    overflow:scroll;
 }
 #DownloadLink{
     grid-column: 2/3;
@@ -103,4 +104,10 @@ form > *{
 }
 #purple{
     background-color: purple;;
+}
+#thumb{
+    padding:10px;
+}
+#thumb img{
+    width:100%;
 }
