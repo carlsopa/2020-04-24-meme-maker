@@ -3,7 +3,7 @@ import SvgControls from './components/svgcontrols';
 import SvgCanvas from './components/svgcanvas';
 import MemeChooser from './components/selector';
 import './style/meme.css'
-import './App.css';
+
 
 
 function App() {
