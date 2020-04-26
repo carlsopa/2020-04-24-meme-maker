@@ -1,7 +1,6 @@
 import React from "react";
 
 const SvgCanvas = (props) => {
-  console.log(props.Meme)
   var lnk = props.details.url;
   const TextBoxArray = []
   for(var i=0; i<props.details.box_count; i++ ){

@@ -17,7 +17,6 @@ function App() {
   const TextSet=(e)=>{
     setMemeText(e)
   }
-  console.log(MemeText);
   return (
     <div className="App">
       <header>
@@ -25,7 +24,7 @@ function App() {
       </header>
       <div id="MemeMaker">
         <SvgCanvas Meme={MemeText} details={Meme}/>
-        <SvgControls setter={setMemeText} details={Meme}/>
+        <SvgControls getter={MemeText} setter={setMemeText} details={Meme}/>
         <MemeChooser click={MemeSet}/>
       </div>
     </div>

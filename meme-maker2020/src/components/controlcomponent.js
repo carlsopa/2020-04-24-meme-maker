@@ -1,9 +1,14 @@
 import React from "react";
 
 const FormComponent = (props) => {
+  console.log(props.values);
+  const Objects = () =>{
+
+  }
   return (
     <div id={props.count} onChange={(e) => props.change(e)}>
-      <input type="text" id={"MemeText" + props.count} />
+      
+      <input type="text" id={"MemeText" + props.count}  />
       <span>choose a color:</span>
       <div id="TopColorPicker">
         <div id="black" className="TopColor"></div>
