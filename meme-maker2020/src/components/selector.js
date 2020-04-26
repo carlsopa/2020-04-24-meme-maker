@@ -15,8 +15,8 @@ const MemeChooser = ({click}) => {
   }, []);
   
 
-  return <div id="MemeChooser">{MemeList.map((key,index)=>
-    <Meme image={key} second={click}/>
+  return <div id="MemeChooser">{MemeList.map((keyid,index)=>
+    <Meme key={index} image={keyid} second={click}/>
   )}
   </div>;
 };
