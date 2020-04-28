@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const FormComponent = (props) => {
   const [Text, setText] = useState("");
   if (props.values) {
-    console.log(props.values);
   }
 
   return (

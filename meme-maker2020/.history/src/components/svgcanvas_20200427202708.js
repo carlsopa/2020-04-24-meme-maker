@@ -9,12 +9,11 @@ const SvgCanvas = (props) => {
     console.log("for");
     console.log(props.Meme[i]);
     TextBoxArray.push(
-      <text key={i} id={"MemeBox" + i} y={`${(i + 1) * 10}px`} fontSize={props.Meme[i].range}>
+      <text key={i} id={"MemeBox" + i} y={`${(i + 1) * 10}px`} fontSize={props.Meme[i]?props.Meme.range:16}>
         {props.Meme[i]
           ? (document.getElementById("MemeBox" + i).textContent =
               props.Meme[i].text)
           : null}
-          
       </text>
     );
   }

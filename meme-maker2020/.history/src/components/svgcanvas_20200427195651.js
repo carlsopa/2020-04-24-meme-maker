@@ -2,19 +2,14 @@ import React from "react";
 
 const SvgCanvas = (props) => {
   var lnk = props.details.url;
-  console.log("canvas");
   //console.log(props.Meme);
   const TextBoxArray = [];
   for (var i = 0; i < props.details.box_count; i++) {
-    console.log("for");
-    console.log(props.Meme[i]);
+    console.log(props.Meme[i])
     TextBoxArray.push(
-      <text key={i} id={"MemeBox" + i} y={`${(i + 1) * 10}px`} fontSize={props.Meme[i].range}>
-        {props.Meme[i]
-          ? (document.getElementById("MemeBox" + i).textContent =
-              props.Meme[i].text)
-          : null}
-          
+      <text key={i} id={"MemeBox" + i} y={`${(i + 1) * 10}px`} fontSize="16">
+        {//document.getElementById("MemeBox" + i).textContent=props.Meme[i].text
+        }
       </text>
     );
   }

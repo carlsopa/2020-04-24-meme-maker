@@ -16,7 +16,7 @@ const SvgControls = (props) => {
       
     }
     if (Type == "range")  {
-      EditVariablesArray[e.currentTarget.id].range = String(e.target.value);
+      EditVariablesArray[e.currentTarget.id].range = e.target.value;
       EditVariablesArray[e.currentTarget.id].text = props.getter[e.currentTarget.id].text;
     }
     props.setter(EditVariablesArray[e.currentTarget.id],true);
