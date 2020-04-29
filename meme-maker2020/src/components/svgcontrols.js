@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import FormComponent from "./controlcomponent";
 
 const SvgControls = (props) => {
   var EditVariablesArray = [];
-  var TextDetails = props.getter;
   var EditBoxArray = [];
 
   const EditorUpdate = (event, ChangeType) => {
@@ -15,7 +14,7 @@ const SvgControls = (props) => {
         EditVariablesArray[event.currentTarget.id].text = event.target.value;
         EditVariablesArray[event.currentTarget.id].range =
           props.getter[event.currentTarget.id].range;
-          EditVariablesArray[event.currentTarget.id].color =
+        EditVariablesArray[event.currentTarget.id].color =
           props.getter[event.currentTarget.id].color;
       }
       if (Type === "range") {
@@ -24,22 +23,18 @@ const SvgControls = (props) => {
         );
         EditVariablesArray[event.currentTarget.id].text =
           props.getter[event.currentTarget.id].text;
-          EditVariablesArray[event.currentTarget.id].color =
+        EditVariablesArray[event.currentTarget.id].color =
           props.getter[event.currentTarget.id].color;
       }
       props.setter(EditVariablesArray[event.currentTarget.id], true);
     }
     if (ChangeType === "click") {
-      const ElementId =event.target.parentElement.parentElement.id;
-      EditVariablesArray[ElementId].color =
-        event.target.id;
-      EditVariablesArray[ElementId].range =
-        props.getter[ElementId].range;
-      EditVariablesArray[ElementId].text =
-        props.getter[ElementId].text;
-        props.setter(EditVariablesArray[ElementId], true);
+      const ElementId = event.target.parentElement.parentElement.id;
+      EditVariablesArray[ElementId].color = event.target.id;
+      EditVariablesArray[ElementId].range = props.getter[ElementId].range;
+      EditVariablesArray[ElementId].text = props.getter[ElementId].text;
+      props.setter(EditVariablesArray[ElementId], true);
     }
-
   };
 
   for (var i = 0; i < props.details.box_count; i++) {
@@ -60,7 +55,6 @@ const SvgControls = (props) => {
     );
   }
   useEffect(() => {
-    console.log("effect");
     props.setter(EditVariablesArray, false);
   }, [props.details]);
 

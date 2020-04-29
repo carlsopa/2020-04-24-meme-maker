@@ -8,7 +8,6 @@ function App() {
   const [Meme, setMeme] = useState([]);
 
   const [MemeText, setMemeText] = useState([]);
-  const [MemeColor, setMemeColor] = useState([]);
   const MemeSet = (e) => {
     setMeme(e);
   };

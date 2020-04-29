@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
 const FormComponent = (props) => {
-  const [Text, setText] = useState("");
   if (props.values) {
   }
 
   return (
-    <div id={props.count} onChange={(event) => props.change(event,"change")}>
+    <div id={props.count} onChange={(event) => props.change(event, "change")}>
       <input
         type="text"
         id={"MemeText" + props.count}
         value={props.values ? props.values.text : null}
       />
       <span>choose a color:</span>
-      <div id="TopColorPicker" onClick={(event)=>props.change(event,"click")}>
+      <div
+        id="TopColorPicker"
+        onClick={(event) => props.change(event, "click")}
+      >
         <div id="black" className="TopColor"></div>
         <div id="white" className="TopColor"></div>
         <div id="yellow" className="TopColor"></div>
