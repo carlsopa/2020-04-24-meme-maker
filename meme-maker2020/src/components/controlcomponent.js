@@ -6,14 +6,14 @@ const FormComponent = (props) => {
   }
 
   return (
-    <div id={props.count} onChange={(e) => props.change(e)}>
+    <div id={props.count} onChange={(event) => props.change(event,"change")}>
       <input
         type="text"
         id={"MemeText" + props.count}
         value={props.values ? props.values.text : null}
       />
       <span>choose a color:</span>
-      <div id="TopColorPicker">
+      <div id="TopColorPicker" onClick={(event)=>props.change(event,"click")}>
         <div id="black" className="TopColor"></div>
         <div id="white" className="TopColor"></div>
         <div id="yellow" className="TopColor"></div>
