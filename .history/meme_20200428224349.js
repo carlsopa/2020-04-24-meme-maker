@@ -5,12 +5,11 @@ var img = document.querySelector('img');
 var canvas = document.querySelector('canvas');
 
 // get svg data
-console.log(svg);
 var xml = new XMLSerializer().serializeToString(svg);
 
 // make it base64
 var svg64 = btoa(xml);
-//console.log(svg64);
+console.log(svg64);
 var b64Start = 'data:image/svg+xml;base64,';
 
 // prepend a "header"

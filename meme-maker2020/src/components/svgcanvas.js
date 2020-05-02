@@ -1,31 +1,20 @@
 import React from "react";
+import TextComponent from "./svgtextcomponent";
 
 const SvgCanvas = (props) => {
   var lnk = props.details.url;
   const TextBoxArray = [];
   for (var i = 0; i < props.details.box_count; i++) {
-    console.log("for");
-    console.log(props.Meme[i]);
-    TextBoxArray.push(
-      <text
-        key={i}
-        id={"MemeBox" + i}
-        y={`${(i + 1) * 10}px`}
-        fontSize={props.Meme[i] ? props.Meme[i].range : "16"}
-        fill={props.Meme[i] ? props.Meme[i].color : "black"}
-      >
-        {props.Meme[i]
-          ? (document.getElementById("MemeBox" + i).textContent =
-              props.Meme[i].text)
-          : null}
-      </text>
-    );
+    if (props.Meme[i]) {
+      TextBoxArray.push(<TextComponent Meme={props.Meme[i]} id={i} />);
+    }
   }
 
   return (
     <div id="SvgCanvas">
-      <svg contentEditable={true}>
+      <svg>
         <image key={props.details.id} x="10" y="10" href={lnk} />
+        {console.log(TextBoxArray)}
         {TextBoxArray}
       </svg>
     </div>

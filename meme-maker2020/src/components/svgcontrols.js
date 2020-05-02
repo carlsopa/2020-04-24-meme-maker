@@ -6,8 +6,6 @@ const SvgControls = (props) => {
   var EditBoxArray = [];
 
   const EditorUpdate = (event, ChangeType) => {
-    //let newarr = {id:e.currentTarget.id,text:e.target.value};
-    //console.log(props.getter[e.currentTarget.id].range);
     var Type = event.target.type;
     if (ChangeType === "change") {
       if (Type === "text") {
@@ -36,6 +34,10 @@ const SvgControls = (props) => {
       props.setter(EditVariablesArray[ElementId], true);
     }
   };
+  const CreateCanvas = (event,Svg)=>{
+
+    
+  }
 
   for (var i = 0; i < props.details.box_count; i++) {
     //push form elements to an array that will be rendered in the controls section.
@@ -51,6 +53,7 @@ const SvgControls = (props) => {
         count={i}
         change={EditorUpdate}
         values={props.getter[i]}
+        
       />
     );
   }
@@ -60,7 +63,8 @@ const SvgControls = (props) => {
 
   return (
     <div id="SvgControls">
-      <form>{EditBoxArray}</form>
+      <form>{EditBoxArray}
+      <div onClick={(event)=>CreateCanvas(event,props.Create)}>Click This!</div></form>
     </div>
   );
 };
