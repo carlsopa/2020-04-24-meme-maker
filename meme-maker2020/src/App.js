@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import SvgControls from "./components/svgcontrols";
 import SvgCanvas from "./components/svgcanvas";
 import MemeChooser from "./components/selector";
+import SvgOutput from "./components/output";
 import "./style/meme.css";
 
 function App() {
@@ -32,8 +33,10 @@ function App() {
         <SvgCanvas Meme={MemeText} details={Meme} />
         <SvgControls getter={MemeText} setter={TextSet} details={Meme} Create={document.getElementsByName(SvgCanvas)} />
         <MemeChooser click={MemeSet} />
+        <SvgOutput/>
+        
         {
-        //console.log(ReactDom.findDOMNode(this).querySelector(SvgCanvas))
+          //console.log(document.querySelector('svg'))
         }
 
         

@@ -12,8 +12,8 @@ const SvgCanvas = (props) => {
 
   return (
     <div id="SvgCanvas">
-      <svg>
-        <image key={props.details.id} x="10" y="10" href={lnk} />
+      <svg xmlns='http://www.w3.org/2000/svg'>
+        <image key={props.details.id} href={lnk} />
         {console.log(TextBoxArray)}
         {TextBoxArray}
       </svg>

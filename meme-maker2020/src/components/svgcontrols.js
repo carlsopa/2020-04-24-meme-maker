@@ -35,6 +35,29 @@ const SvgControls = (props) => {
     }
   };
   const CreateCanvas = (event,Svg)=>{
+    const svg = document.querySelector('svg');
+    const img = document.createElement('img');
+    img.style.width = svg.style.width;
+    img.style.height = svg.style.height;
+
+    const canvas = document.querySelector('canvas');
+    console.log(img);
+    //const xml = new XMLSerializer().serializeToString(svg);
+    const xml = svg.outerHTML;
+    console.log(xml);
+    const svg64 = window.btoa(xml);
+    const b64Start = 'data:image/svg+xml;base64,';
+    const image64 = b64Start + svg64;
+    img.src = image64;
+    console.log(canvas);
+    canvas.getContext('2d').drawImage(img,0,0);
+    var dt = canvas.toDataURL('image/png'); // << this fails in IE/Edge...
+  dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
+  dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
+  // console.log(dt);
+  // console.log(event.currentTarget.href);
+  event.currentTarget.href = dt;
+
 
     
   }
@@ -64,7 +87,7 @@ const SvgControls = (props) => {
   return (
     <div id="SvgControls">
       <form>{EditBoxArray}
-      <div onClick={(event)=>CreateCanvas(event,props.Create)}>Click This!</div></form>
+      <a onClick={(event)=>CreateCanvas(event,props.Create)} download="canvas.png" href="#">Click This!</a></form>
     </div>
   );
 };

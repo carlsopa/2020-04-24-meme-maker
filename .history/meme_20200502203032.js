@@ -27,7 +27,6 @@ function dlCanvas() {
   var dt = canvas.toDataURL('image/png'); // << this fails in IE/Edge...
   dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
   dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
-  console.log(dt);
   this.href = dt;
 };
 document.getElementById('dl').addEventListener('click', dlCanvas, false);
